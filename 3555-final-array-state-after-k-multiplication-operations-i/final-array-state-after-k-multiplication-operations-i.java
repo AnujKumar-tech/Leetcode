@@ -4,7 +4,6 @@ class Solution {
         int n = nums.length;
 
         for (int j = 0; j < k; j++) {
-            // Find the index of the smallest element in the array
             int minIndex = 0;
             for (int i = 0; i < n; i++) {
                 if (nums[i] < nums[minIndex]) {
@@ -12,7 +11,6 @@ class Solution {
                 }
             }
 
-            // Multiply the smallest element by the multiplier
             nums[minIndex] *= multiplier;
         }
 
