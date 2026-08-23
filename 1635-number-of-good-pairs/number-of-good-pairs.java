@@ -1,9 +1,13 @@
 class Solution {
     public int numIdenticalPairs(int[] nums) {
+        HashMap<Integer,Integer> map = new HashMap<>();
         int count = 0;
-        int freq[] = new int[101];
-        for(int a:nums){
-            count += freq[a]++;
+
+        for(int num : nums){
+            if(map.containsKey(num)){
+                count += map.get(num);
+            }
+            map.put(num,map.getOrDefault(num,0)+1);
         }
         return count;
     }
